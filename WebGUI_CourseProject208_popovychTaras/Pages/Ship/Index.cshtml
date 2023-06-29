@@ -1,0 +1,51 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Ship.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shippers</title>
+  </head>
+  <body>
+      <br></br>
+    <h2>Shippers list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+
+<th>Name</th>
+<th>Data</th>
+<th>Quantity</th>
+<th>Ready</th>
+<th>City</th>
+<th>Address</th>
+<th>Country</th>
+<th>Required</th>
+<th>Shipped</th>
+<th>Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.shippersList)
+            {
+                        <tr>
+                            <td>@item.shipperName</td>
+    <td>@item.expr1</td>
+    <td>@item.quantity</td>
+    <td>@item.expr2</td>
+    <td>@item.shipCity</td>
+    <td>@item.shipAddress</td>
+    <td>@item.shipCountry</td>
+    <td>@item.requiredDate</td>
+    <td>@item.shippedDate</td>
+    <td>@item.expr3</td>
+                        </tr>
+            }
+      </tbody>
+    </table>
+  </body>
+</html>

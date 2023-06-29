@@ -1,0 +1,160 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Customers.CustomerEditModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing Data</title>
+  </head>
+  <body>
+    <br />
+    <h2>Edit Customer</h2>
+
+    @if (Model.errorMessage.Length > 0)
+    {
+              <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                <strong>@Model.errorMessage</strong>
+                <button
+                  type='button'
+                  class='btn-close'
+                  data-bs-dissmiss='alert'
+                  aria-label='Close'
+                ></button>
+              </div>
+    }
+
+    <form method="POST">
+        <input type="hidden" name="id" value="@Model.customersInfo.customerID">
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Company Name</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="companyName"
+            value="@Model.customersInfo.companyName"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerPhone"
+            value="@Model.customersInfo.customerPhone"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerEmail"
+            value="@Model.customersInfo.customerEmail"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerFirstName"
+            value="@Model.customersInfo.customerFirstName"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerLastName"
+            value="@Model.customersInfo.customerLastName"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Country</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerCountry"
+            value="@Model.customersInfo.customerCountry"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">City</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerCity"
+            value="@Model.customersInfo.customerCity"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="customerAddress"
+            value="@Model.customersInfo.customerAddress"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Postal Code</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="postalCode"
+            value="@Model.customersInfo.postalCode"
+          />
+        </div>
+      </div>
+
+
+        @if (Model.successMessage.Length > 0)
+        {
+                <div class="row mb-3">
+                  <div class="col-sm-9">
+                    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                      <strong>@Model.successMessage</strong>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dissmiss="alert"
+                        aria-label="close"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+        }
+
+      <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+          <button type="Submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+          <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+	try
+	{
+		String microschemeID = Request.Query["MicroschemesID"];
+		String connectionString = "Data Source=NOTEBOOKPRO;Initial Catalog=Beta;Integrated Security=True";
+		using (SqlConnection connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+			String sql = "SELECT FROM [Beta].[dbo].[AllProductInformation] Where MicroschemesID = @microschemeID";
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.AddWithValue("@MicroschemesID", microschemeID);
+				command.ExecuteNonQuery();
+			}
+		}
+	}
+	catch(Exception ex)
+	{
+		Console.WriteLine(ex);
+	}
+	Response.Redirect("/Products/Index");
+}

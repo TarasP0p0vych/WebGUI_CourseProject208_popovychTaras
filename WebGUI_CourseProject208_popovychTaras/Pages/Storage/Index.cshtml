@@ -1,0 +1,44 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Storage.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StorageData</title>
+  </head>
+  <body>
+      <br></br>
+    <h2>Storage Data</h2>
+    <table class="table">
+      <thead>
+        <tr>
+<th>StorageID</th>
+<th>Number Storage</th>
+<th>Consignment Number</th>
+<th>Shelf</th>
+<th>Schemes</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.storageList)
+            {
+                    <tr>
+               <td>@item.storageID</td>
+    <td>@item.storageNumber</td>
+    <td>@item.consignmentID</td>
+    <td>@item.shelf</td>
+    <td>@item.countOfSchemes</td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href="/Storage/StorageEdit?id=@item.storageID">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/Storage/StorageDelete?id=@item.storageID">Delete</a>
+                      </td>
+                    </tr>
+            }
+      </tbody>
+    </table>
+  </body>
+</html>

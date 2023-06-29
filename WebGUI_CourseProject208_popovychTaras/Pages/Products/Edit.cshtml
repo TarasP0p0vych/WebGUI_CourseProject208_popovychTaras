@@ -1,0 +1,211 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Products.EditModel
+@{
+}
+
+    <br />
+    <h2>Edit Data</h2>
+
+    @if (Model.errorMessage.Length > 0)
+    {
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+          <strong>@Model.errorMessage</strong>
+          <button
+            type='button'
+            class='btn-close'
+            data-bs-dissmiss='alert'
+            aria-label='Close'
+          ></button>
+        </div>
+    }
+
+    <form method="POST">
+        <input type="hidden" name="id" value="@Model.microchipsInfo.microschemeID">
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Microscheme</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="microscheme" value="@Model.microchipsInfo.chipName" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Type</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="type"
+            value="@Model.microchipsInfo.subtypeName"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Brand</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="brand"
+            value="@Model.microchipsInfo.manufacturerName"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Voltage(V)</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="voltage"
+            value="@Model.microchipsInfo.voltage"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Configuration</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="configuration"
+            value="@Model.microchipsInfo.pinConfig"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Capacity</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="capacity"
+            value="@Model.microchipsInfo.capacity"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Metric</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="metric"
+            value="@Model.microchipsInfo.capacityType"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Access(ms)</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="access"
+            value="@Model.microchipsInfo.accessTime"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Techprocess</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="techprocess"
+            value="@Model.microchipsInfo.nanometers"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Write</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="write"
+            value="@Model.microchipsInfo.writeInfo"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Read</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="read"
+            value="@Model.microchipsInfo.readInfo"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Basic</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="basic"
+            value="@Model.microchipsInfo.baseSpeed"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Released</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="released"
+            value="@Model.microchipsInfo.releaseDate"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Site</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="site"
+            value="@Model.microchipsInfo.manufacturerWeb"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Rating</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="rating"
+            value="@Model.microchipsInfo.userRating"
+          />
+        </div>
+      </div>
+
+        @if (Model.successMessage.Length > 0)
+        {
+                    <div class="row mb-3">
+          <div class="col-sm-9">
+            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>@Model.successMessage</strong>
+            <button
+              type="button"
+              class="btn-close"
+                  data-bs-dissmiss="alert"
+                aria-label="close"
+            ></button>
+          </div>
+        </div>
+            </div>
+
+        }
+
+      <div class="row mb-3">
+  <div class="offset-sm-3 col-sm-3 d-grid">
+    <button type="Submit" class="btn btn-primary">Submit</button>
+  </div>
+  <div class="col-sm-3 d-grid">
+   <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+  </div>
+</div>
+    </form>

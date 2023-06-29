@@ -1,0 +1,54 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Manufacturers.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manufacturers</title>
+  </head>
+  <body>
+      <br></br>
+    <h2>Manufacturers list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+<th>Manufacturer</th>
+<th>Region</th>
+<th>Address</th>
+<th>Contact Person</th>
+<th>Phone</th>
+<th>Fax</th>
+<th>Email</th>
+<th>Website</th>
+<th>Product Line</th>
+<th>Established</th>
+<th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.manufacturerList)
+            {
+                    <tr>
+                    <td>@item.manufacturerID</td>
+         <td><a href="<td>@item.manufacturerName</td>">@item.manufacturerName</a></td>
+    <td>@item.manufacturerRegion</td>
+    <td>@item.manufacturerAddress</td>
+        <td>@item.contactPersonFirstName @item.contactPersonSecondName</td>
+    <td>@item.phoneNumber</td>
+    <td>@item.fax</td>
+    <td>@item.manufacturerEmail</td>
+        <td><a href="@item.manufacturerWebsite">@item.manufacturerWebsite</a></td>
+    <td>@item.productLine</td>
+    <td>@item.establishDate</td>
+    <td>@item.description</td>
+                
+                    </tr>
+            }
+      </tbody>
+    </table>
+  </body>

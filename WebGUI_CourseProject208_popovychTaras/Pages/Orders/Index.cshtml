@@ -1,0 +1,48 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Orders.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <a class="btn-primary btn-sm" href="/Customers/CreateCustomer">New Order</a>
+  </head>
+  <body>
+      <br></br>
+    <h2>Orders list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+<th>Microscheme ID</th>
+<th>Microscheme</th>
+<th>Price$</th>
+<th>Quantity</th>
+<th>Discount%</th>
+<th>Full Price$</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.ordersList)
+            {
+                            <tr>
+                                    <td>@item.orderID</td>
+    <td>@item.microschemesID</td>
+    <td>@item.chipName</td>
+    <td>@item.cost</td>
+    <td>@item.quantity</td>
+    <td>@item.discountPercentage</td>
+    <td>@item.extendedPrice</td>
+         <td>
+                                <a class="btn btn-primary btn-sm" href="/Customers/CustomerEdit?id=@item.microschemesID">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="/Customers/CustomerDelete?id=@item.microschemesID">Delete</a>
+                      </td>
+                            </tr>
+            }
+      </tbody>
+    </table>
+  </body>

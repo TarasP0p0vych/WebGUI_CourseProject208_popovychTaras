@@ -1,0 +1,41 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Patents.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patents</title>
+  </head>
+  <body>
+      <br></br>
+    <h2>Patents list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Technology</th>
+<th>Year</th>
+<th>Company</th>
+<th>Sphere</th>
+<th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.patentsList)
+            {
+                        <tr>
+                            <td>@item.technology</td>
+    <td>@item.year</td>
+        <td><a href="<td>@item.manufacturerName</td>">@item.manufacturerName</a></td>
+    <td>@item.note</td>
+    <td>@item.sphere</td>
+        <td><a href="@item.manufacturerWebsite">@item.manufacturerWebsite</a></td>
+    
+                        </tr>
+            }
+      </tbody>
+    </table>
+  </body>

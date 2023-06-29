@@ -1,0 +1,69 @@
+﻿@page
+@model WebGUI_CourseProject208_popovychTaras.Pages.Clients.IndexModel
+@{
+    ViewData["Title"] = "Product Journal";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microschemes</title>
+  </head>
+  <body>
+      <br></br>
+    <h2>All products list</h2>
+    <a class="btn-primary btn-sm" href="/Products/Create">New Microscheme</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Microscheme</th>
+          <th>Type</th>
+          <th>Brand</th>
+          <th>Voltage(V)</th>
+          <th>Configuration</th>
+          <th>Capacity</th>
+          <th>Metric</th>
+          <th>Access(ms)</th>
+          <th>Techprocess</th>
+          <th>Write</th>
+          <th>Read</th>
+          <th>Basic</th>
+          <th>Released</th>
+          <th>Site</th>
+          <th>Rating</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var item in Model.listChips) {
+            <tr>
+    <td>@item.microschemeID</td>
+    <td>@item.chipName</td>
+    <td>@item.subtypeName</td>
+    <td>@item.manufacturerName</td>
+    <td>@item.voltage</td>
+    <td>@item.pinConfig</td>
+    <td>@item.capacity</td>
+    <td>@item.capacityType</td>
+    <td>@item.accessTime</td>
+    <td>@item.nanometers</td>
+    <td>@item.writeInfo</td>
+    <td>@item.readInfo</td>
+    <td>@item.baseSpeed</td>
+    <td>@item.releaseDate</td>
+    <td>@item.manufacturerWeb</td>
+    <td>@item.userRating</td>
+              <td>
+                <a class="btn btn-primary btn-sm" href="/Products/Edit?id=@item.microschemeID">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Products/Delete?id=@item.microschemeID">Delete</a>
+              </td>
+            </tr>
+            }
+      </tbody>
+    </table>
+  </body>
+</html>
